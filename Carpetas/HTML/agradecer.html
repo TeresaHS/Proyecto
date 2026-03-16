@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agradecer</title>
+    <link rel="stylesheet" href="..\CSS\estilo.css"/>
+
+    <!-- Las siguientes lineas son para tener la fuente de Montserrat de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <header>
+        <a href="..\HTML\home.html"><h1><span class="mayusTitulo">A</span>GRADECE <span id="minusTitulo">EN</span> <span class="mayusTitulo">C</span>OMPAÑÍA</h1></a>
+        <hr id="linea">
+        <nav>
+            <a href="..\HTML\agradecer.html"><p class="enlaces" id="activo">Agradecer</p></a>
+            <a href="..\HTML\recibidos.html"><p class="enlaces">Recibir</p></a>
+            <a href="..\HTML\inicioSesion.html"><p class="enlaces">Cerrar Sesión</p></a>
+        </nav>
+    </header>
+    <main id="mainAgradecer">
+        <form id="formAgradecer">
+            <fieldset id="fieldsetAgradecer">
+                <label for="compa">Para:</label>
+                <select id="compa">
+                    <option>Selecciona un nombre</option>
+                    <option>Manuel</option>
+                    <option>Aitor</option>
+                    <option>Samuel</option>
+                </select>
+                <label for="mensaje">Gracias por</label> 
+                <textarea id="mensaje"></textarea>
+                <input type="submit" value="ENVIAR"/>
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
