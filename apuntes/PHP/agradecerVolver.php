@@ -22,7 +22,7 @@
         return $total_filas;
     }
     
-    function selectAgradecer(){
+    function guardarMensaje(){
         $conexion=conectar();
         $sql="select puesto,nombre from alumnos;";
         $resultado=$conexion->query($sql);
@@ -64,20 +64,17 @@
         </nav>
     </header>
     <main id="mainAgradecer">
-        <form id="formAgradecer" action=".\agradecerVolver.php" method="get">
-            <fieldset id="fieldsetAgradecer">
-                <label for="compa">Para:</label>
-                <select id="compa" name="compa">
-                    <option value="00">Todos</option>
-                    <?php
-                        selectAgradecer();
-                    ?>
-                </select>
-                <label for="mensaje">Gracias por</label> 
-                <textarea id="mensaje" name="mensaje" maxlength="250"></textarea>
-                <input type="submit" value="ENVIAR"/>
-            </fieldset>
-        </form>
+        <section id="comprobarMensaje">
+            <?php
+
+                echo 'Puesto destino: '.$_GET['compa'];
+                echo '<br>';
+                echo 'Mensaje: '.$_GET['mensaje'];
+
+            ?>
+            <a href="agradecer.php" ><p>VOLVER</p></a>
+        </section>
     </main>
 </body>
 </html>
+

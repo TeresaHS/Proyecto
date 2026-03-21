@@ -8,7 +8,7 @@
         return $conexion;
     }
 
-    function actualizar(){
+    /*function actualizar(){
         $conexion=conectar();
         $sql = "INSERT INTO alumnos(puesto, nombre, usuario) VALUES 
             ('13', 'Aitor', 'aitorUser'),
@@ -18,7 +18,7 @@
         $filas_afectadas=$conexion->affected_rows;
         $conexion->close();
         return $filas_afectadas;
-    }
+    }*/
 
 
     function consultar(){
