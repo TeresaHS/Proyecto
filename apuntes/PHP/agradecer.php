@@ -8,20 +8,6 @@
         return $conexion;
     }
 
-    function consultar(){
-        $conexion=conectar();
-        $sql="select * from alumnos";
-        $resultado=$conexion->query($sql);
-        $total_filas=$resultado->num_rows;
-        while($fila=$resultado->fetch_array()){
-            echo "<p>";
-            echo $fila["puesto"].'-'.$fila["nombre"];
-            echo "</p>";
-        }
-        $conexion->close();
-        return $total_filas;
-    }
-    
     function selectAgradecer(){
         $conexion=conectar();
         $sql="select puesto,nombre from alumnos;";

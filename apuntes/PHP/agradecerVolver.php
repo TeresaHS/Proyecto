@@ -8,29 +8,29 @@
         return $conexion;
     }
 
-    function consultar(){
-        $conexion=conectar();
-        $sql="select * from alumnos";
-        $resultado=$conexion->query($sql);
-        $total_filas=$resultado->num_rows;
-        while($fila=$resultado->fetch_array()){
-            echo "<p>";
-            echo $fila["puesto"].'-'.$fila["nombre"];
-            echo "</p>";
-        }
-        $conexion->close();
-        return $total_filas;
-    }
-    
     function guardarMensaje(){
         $conexion=conectar();
-        $sql="select puesto,nombre from alumnos;";
+        $sql="INSERT INTO agradecimientos (mensaje,idEmisor,idReceptor) VALUES ('".$_GET['mensaje']."', '16','".$_GET['compa']."');";
         $resultado=$conexion->query($sql);
-        while($fila=$resultado->fetch_array()){
-            echo '<option value="'.$fila["puesto"].'">'.$fila["nombre"].'</option>';
-        }
         $conexion->close();
     }
+
+    // $sql="INSERT INTO agradecimientos (mensaje,idEmisor,idReceptor) VALUES ('".$_GET['mensaje']."', '".$_GET['user']."','".$_GET['compa']."');"
+
+
+
+    /*
+    
+    El problema de la inyeccion sql se puede solucionar convirtiendo el texto que llega a este php en String:
+    
+    $mensaje = $conexion->real_escape_string($_GET['mensaje']);
+    $idEmisor = $conexion->real_escape_string($_GET['user']);
+    $idReceptor = $conexion->real_escape_string($_GET['compa']);
+
+    Después sustituirlo en la consulta SQL
+    
+    */
+
 
 ?>
 
@@ -66,6 +66,8 @@
     <main id="mainAgradecer">
         <section id="comprobarMensaje">
             <?php
+
+                guardarMensaje();
 
                 echo 'Puesto destino: '.$_GET['compa'];
                 echo '<br>';
